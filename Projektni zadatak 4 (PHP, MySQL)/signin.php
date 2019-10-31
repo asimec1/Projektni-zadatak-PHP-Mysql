@@ -21,6 +21,7 @@
 		
 		$query  = "SELECT * FROM users";
 		$query .= " WHERE username='" .  $_POST['username'] . "'";
+		$query .= " AND archive='N'";
 		$result = @mysqli_query($MySQL, $query);
 		$row = @mysqli_fetch_array($result, MYSQLI_ASSOC);
 		
