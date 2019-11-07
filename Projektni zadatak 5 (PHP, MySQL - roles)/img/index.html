@@ -1,0 +1,31 @@
+<?php
+function Prost($number)
+{
+        if ($number < 2) {
+                return false;
+        }
+        for ($i=2; $i<=($number / 2); $i++) {
+                if($number % $i == 0) { 
+                        return false;
+                }
+        }
+        return true;
+}
+
+
+$start = 0;
+$end = 100;
+$knownprimes = array();
+
+
+while($start <= $end)
+{
+$check  = Prost($start);
+		
+		if($check == 1)
+		{
+		$knownprimes[] = $start;
+		}
+		$start++; 
+		
+}
